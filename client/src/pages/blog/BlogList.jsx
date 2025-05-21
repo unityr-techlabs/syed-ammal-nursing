@@ -11,7 +11,7 @@ const BlogList = () => {
   const [allBlogs,setAllBlogs] = useState(null)
   useEffect(()=>{
     try {
-      axios.get('http://localhost:3000/api/blog').then((res)=>{
+      axios.get(`${import.meta.env.VITE_API_URL}/blog`).then((res)=>{
         setAllBlogs(res.data.data)
       })
     } catch (error) {
@@ -25,7 +25,7 @@ const BlogList = () => {
       return(
         <div className=" border rounded-2xl border-paragraph/20 overflow-hidden">
                         <div className="">
-                            <img src="/dummy.jpg" className='h-[300px] object-cover w-full' alt="" />
+                            <img src={`${import.meta.env.VITE_API_URL}/${item.profilePicture}`} className='h-[300px] object-cover w-full' alt="" />
                         </div>
                         <div className="content relative p-5 pt-10">
                             <div className=" bg-primary rounded-xl text-white flex flex-col w-20 h-20 absolute justify-center items-center font-semibold  -top-14">

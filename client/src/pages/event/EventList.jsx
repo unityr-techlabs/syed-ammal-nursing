@@ -13,7 +13,7 @@ const EventList = () => {
       return(
         <div className="  bg-background overflow-hidden border rounded-2xl border-paragraph/20">
                         <div className=" relative h-[300px]">
-                            <img src="/dummy.jpg" className=' absolute' alt="" />
+                            <img src={`${import.meta.env.VITE_API_URL}/${item.profilePicture}`} className=' absolute' alt="" />
                         </div>
                         <div className="p-5 pt-1 relative">
                         <h3 className=' bg-primary rounded-xl absolute !-top-11 w-fit text-xs font-semibold tracking-wide px-4 py-3 text-white capitalize'>cultural</h3>

@@ -17,10 +17,10 @@ const DepartmentDetail = () => {
     const [testimonial,setTestimonial] = useState(null)
     useEffect(()=>{
       try {
-        axios.get(`http://localhost:3000/api/department/${name}`).then((res)=>{
+        axios.get(`${import.meta.env.VITE_API_URL}/department/${name}`).then((res)=>{
           setDepartment(res.data.data)
         })
-        axios.get(`http://localhost:3000/api/review`).then((res)=>{
+        axios.get(`${import.meta.env.VITE_API_URL}/review`).then((res)=>{
           setTestimonial(res.data.data)
         })
       } catch (error) {
@@ -36,7 +36,7 @@ const DepartmentDetail = () => {
         return(
           <div className=" shadow-minimal rounded-2xl p-8 border border-paragraph/20">
             <div className="flex gap-3 items-center mb-7">
-                <img src="/dummy.png" className=' rounded-full p-6 bg-paragraph' alt="" />
+                <img src={`${import.meta.env.VITE_API_URL}/${item.profilePicture}`} className=' rounded-full p-6 bg-paragraph' alt="" />
               <div className=" space-y-1">
                 <h1 className=' font-heading capitalize text-lg font-bold text-heading'>student name</h1>
                 <h4 className=' text-heading text-xs capitalize'>2021 - 2025 batch</h4>

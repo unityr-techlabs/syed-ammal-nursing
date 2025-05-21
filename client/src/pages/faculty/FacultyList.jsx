@@ -13,7 +13,7 @@ const FacultyList = () => {
    const [faculty,setFaculty] = useState(null)
     useEffect(()=>{
       try {
-        axios.get('http://localhost:3000/api/faculty').then((res)=>{
+        axios.get(`${import.meta.env.VITE_API_URL}/faculty`).then((res)=>{
           if (res.status != 200){
             console.log('something went wrong')
             return 0
@@ -31,7 +31,7 @@ const FacultyList = () => {
       return(
         <div className="  bg-background relative flex flex-col items-center overflow-hidden border rounded-2xl border-paragraph/20">
             <div className=" relative h-[250px] w-full">
-                <img src={`http://localhost:3000/api/${item.profilePicture}`}className=' h-full w-full object-cover absolute' alt="" />
+                <img src={`${import.meta.env.VITE_API_URL}/${item.profilePicture}`}className=' h-full w-full object-cover absolute' alt="" />
             </div>
             <div className="p-5 pt-6 relative w-full">
                <h3 className=' bg-primary rounded-xl absolute !-top-6 w-fit text-xs font-semibold tracking-wide px-4 py-3 text-white capitalize'>{item.disignation}</h3>

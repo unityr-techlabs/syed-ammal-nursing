@@ -18,7 +18,7 @@ const BlogSection = () => {
   const [blog,setBlog] = useState(null)
   useEffect(()=>{
     try {
-      axios.get('http://localhost:3000/api/blog').then((res)=>{
+      axios.get(`${import.meta.env.VITE_API_URL}/blog`).then((res)=>{
         if (res.status != 200){
           console.log('something went wrong')
           return 0

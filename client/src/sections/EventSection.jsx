@@ -17,7 +17,7 @@ const EventSection = () => {
     const [event,setEvent] = useState(null)
     useEffect(()=>{
       try {
-        axios.get('http://localhost:3000/api/event').then((res)=>{
+        axios.get(`${import.meta.env.VITE_API_URL}/event`).then((res)=>{
           if (res.status != 200){
             console.log('something went wrong')
             return 0

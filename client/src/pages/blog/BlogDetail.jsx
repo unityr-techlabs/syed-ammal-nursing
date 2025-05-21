@@ -15,11 +15,11 @@ const BlogDetail = () => {
   const [allBlogs,setAllBlogs] = useState(null)
   useEffect(()=>{
     try {
-      axios.get(`http://localhost:3000/api/blog/${name}`).then((res)=>{
+      axios.get(`${import.meta.env.VITE_API_URL}/blog/${name}`).then((res)=>{
         setblog(res.data.data)
         console.log(res.data.data)
       })
-      axios.get('http://localhost:3000/api/blog').then((res)=>{
+      axios.get(`${import.meta.env.VITE_API_URL}/blog`).then((res)=>{
         setAllBlogs(res.data.data)
       })
     } catch (error) {
@@ -31,7 +31,7 @@ const BlogDetail = () => {
     return(
       <section>
         <div className="">
-          <img src={`http://localhost:3000/api/${item.profilePicture}`} alt="" className='h-[400px] rounded-2xl object-cover w-full mb-5 ' />
+          <img src={`${import.meta.env.VITE_API_URL}/${item.profilePicture}`} alt="" className='h-[400px] rounded-2xl object-cover w-full mb-5 ' />
           <div className="flex mb-5 gap-6 capitalize">
               <h3 className='flex items-center gap-3 font-heading font-bold'><MdOutlineDateRange className=' text-primary'/>  11 may 2025</h3>
               <h3 className='flex items-center gap-3 font-heading font-bold'><MdOutlineDateRange className=' text-primary'/>  admin</h3>

@@ -13,7 +13,7 @@ const FacultyDetail = () => {
   const [faculty,setFaculty] = useState(null)
       useEffect(()=>{
         try {
-          axios.get(`http://localhost:3000/api/faculty/${name}`).then((res)=>{
+          axios.get(`${import.meta.env.VITE_API_URL}/faculty/${name}`).then((res)=>{
             if (res.status != 200){
               console.log('something went wrong')
               return 0
@@ -81,7 +81,7 @@ const FacultyDetail = () => {
           <Header/>
           <div className="py-10 main flex flex-col xl:flex-row gap-10">
             <div className="xl:w-[30%] space-y-9">
-              <img src={`http://localhost:3000/api/${faculty.profilePicture}`} className=' object-cover rounded-2xl w-full h-[400px]' alt="" />
+              <img src={`${import.meta.env.VITE_API_URL}/${item.profilePicture}`} className=' object-cover rounded-2xl w-full h-[400px]' alt="" />
               <ContactBox/>
             </div>
             <div className="xl:w-[70%]">
