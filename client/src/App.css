@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import "tailwindcss";
+
+@theme{
+ --color-primary:#9DCD5D;
+ --color-secondary:#023c77;
+
+ --color-background:#FFFFFF;
+ --color-foreground:#F5F8FA;
+
+ --color-heading: #023c77; /*0e204d*/
+ --color-paragraph : #858585;
+
+ --font-heading: Titillium Web,sans-serif;
+ --font-para:"Open Sans", sans-serif;
+ --font-universal: Kanit,sans-serif;
+
+
+ --shadow-minimal: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  --breakpoint-xxs: 375px;
+  --breakpoint-xs: 410px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-xxl: 1660px;
+
+}
+
+
+@layer components{
+    .main{
+        @apply w-11/12 xl:w-[75%] xxl:!w-[50%] mx-auto duration-300 transition-all
+    }
+    .title{
+        @apply text-5xl font-bold capitalize text-heading font-heading
+    }
+    .sub-title{
+        @apply uppercase font-semibold text-sm text-primary
+    }
+    .heading{
+        @apply capitalize font-bold text-4xl text-heading font-heading
+    }
+    .paragraph{
+        @apply text-paragraph leading-relaxed capitalize font-para
+    }
+}
+
+
+/* *{
+    font-family: var(--font-universal) !important;
+} */
+ 
+.c-table,.c-td, .c-th{
+    border:solid #f5f5f5 1px;
+}
+
+
+
+
+  /* Repeating content */
+  .scroll-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation: scrollUp 50s linear infinite;
+  }
+  
+  /* For middle column - reverse the direction */
+  .scroll-down .scroll-content {
+    animation-direction: reverse;
+  }
+  
+  /* Keyframes */
+  @keyframes scrollUp {
+    0% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+  
